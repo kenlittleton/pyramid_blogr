@@ -10,7 +10,9 @@
 
     <p><a href="{{ request.route_url('home') }}">Go Back</a> ::
         <a href="{{ request.route_url('blog_action', action='edit',
-        _query={'id':entry.id}) }}">Edit entry</a>
+        _query={'id':entry.id}) }}">Edit entry</a> ::
+        <a href="{{ request.route_url('blog_action', action='delete',
+        _query={'id':entry.id}) }}">Delete entry</a>
 
     </p>
 {% endblock %}
