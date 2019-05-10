@@ -45,13 +45,13 @@ def blog_update(request):
     return {'form': form, 'action': request.matchdict.get('action')}
 
 
-@view_config(route_name="blog_action", match_param="action=delete",
-             renderer="pyramid_blogr:templates/edit_blog.jinja2",
-             permission="delete")
+@view_config(route_name='blog_action', match_param='action=delete',
+             renderer='pyramid_blogr:templates/edit_blog.jinja2',
+             permission='delete')
 def blog_delete(request):
-    blog_id = int(request.params.get("id", -1))
+    blog_id = int(request.params.get('id', -1))
     entry = BlogRecordService.by_id(blog_id, request)
     if not entry:
         return HTTPNotFound()
     request.dbsession.delete(entry)
-    return HTTPFound(location=request.route_url("home"))
+    return HTTPFound(location=request.route_url('home'))
