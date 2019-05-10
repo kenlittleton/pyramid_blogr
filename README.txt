@@ -12,10 +12,6 @@ Getting Started
 
     python3 -m venv env
 
-- Set the shell to use Python virtual environment.
-
-    source env/bin/activate
-
 - Upgrade packaging tools.
 
     env/bin/pip install --upgrade pip setuptools
